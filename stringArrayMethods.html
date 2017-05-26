@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script>
+// Here's the list of methods we need to manually create:
+// STRING:
+//   concat
+//   endswith
+//   includes
+//   indexOf
+// ARRAY:
+//   push
+//   concat
+//   join
+//
+// STRING METHODS
+//   CONCAT
+    function concatenate() {
+      allText = "";
+      for (var i = 0; i < arguments.length; i++) {
+        allText = allText + arguments[i];
+      }
+      console.log(allText);
+      return allText;
+    }
+concatenate("brown", 16, "red", "asasdfa3453");
+
+//ENDSWITH
+function myEndsWith(stringCheck, stringEnd) {
+  var stringCheckEnd = stringCheck.substr(stringCheck.length - stringEnd.length, stringCheck.length);
+  var results = stringEnd == stringCheckEnd;
+  console.log(results);
+  return results;
+}
+myEndsWith("I like the jungles in Brazil.", "in Brazil.");
+
+// INCLUDES
+function myIncludes(fullString, searchString) {
+for (var i = 0; i < fullString.length; i++) {
+  var fullStringExtract = fullString.substr(i, searchString.length);
+  if (searchString === fullStringExtract) {
+    var results = true;
+    console.log(results);
+    i = fullString.length;
+    //else if checks to see if there are still enough characters to compare
+    //if so, the function continues to run, by returning nothing and continuing to loop
+    //a value of FALSE in the console means the function couldn't find a matching string
+    //and has run out of characters to compare
+  } else if (fullString.length - i < searchString.length){
+    results = false;
+    console.log(results);
+      i = fullString.length;
+  }
+}
+return results;
+}
+myIncludes("The space shuttle is in orbit.", "e is in o");
+
+//INDEXOF
+function myIndexOf(fullString, searchString) {
+for (var i = 0; i < fullString.length; i++) {
+  var fullStringExtract = fullString.substr(i, searchString.length);
+  if (searchString === fullStringExtract) {
+    var results = i;
+    console.log(results);
+    i = fullString.length;
+    //else if checks to see if there are still enough characters to compare
+    //if so, the function continues to run, by returning nothing and continuing to loop
+    //a value of -1 in the console means the function couldn't find a matching string
+    //and has run out of characters to compare
+  } else if (fullString.length - i < searchString.length){
+    results = -1;
+    console.log(results);
+      i = fullString.length;
+  }
+}
+return results;
+}
+myIndexOf("The space shuttle is in space.", "spaceman");
+
+// ARRAY METHODS
+// PUSH ARRAY
+function myPush(animalsAdded) {
+  var animals = (["wombat", "orangutan", "marmot", "hyena"]);
+  for (var i = 0; i < animalsAdded.length; i++) {
+    animals[animals.length] = animalsAdded[i];
+  }
+    console.log(animals.length);
+    return animals.length;
+}
+myPush(["walaby", "fox", "bear", "person", "cat", "killer whale"]);
+
+// CONCAT ARRAY
+function myConcat(myArrays) {
+  var masterArray = [];
+  for (var i = 0; i < myArrays.length; i++) {
+    for (var j = 0; j < myArrays[i].length; j++) {
+      masterArray[masterArray.length] = myArrays[i][j];
+    }
+  }
+  console.log(masterArray);
+  return masterArray;
+}
+myConcat([["david", "sarah", "evelyn"], ["cardon", "maggie", "mason"], ["charlotte", "bear"]]);
+
+// JOIN
+function myJoin(myArray,delimiter) {
+  var newString = "";
+  for (var i = 0; i < myArray.length; i++) {
+    if (newString == "") {
+      newString = myArray[i];
+    } else {
+      newString = newString + delimiter + myArray[i];
+    }
+  }
+  console.log(newString);
+  return newString;
+}
+myJoin(["david", "sarah", "cardon", "maggie"], " , ");
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>
